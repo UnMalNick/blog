@@ -2,3 +2,4 @@ django-project/blog/settings.py
 env
 .vscode
 django-project/media
+django-project/static
