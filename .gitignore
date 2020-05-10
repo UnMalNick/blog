@@ -3,3 +3,4 @@ env
 .vscode
 django-project/media
 django-project/static
+__pycache__
