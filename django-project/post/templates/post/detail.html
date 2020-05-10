@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{{ post.title }}</h1>
+    <br>
+    {{ post.body|safe }}
+    <hr class="my-4">
+    {% if request.user.is_authenticated %}
+    <form action="{% url 'post-detail' post_slug=post.slug category_slug=post.category.slug %}" method="POST">
+        {% csrf_token %}
+        <div class="form-group">
+            <h5>Nuevo Comentario:</h5>
+            <br>
+            {{form.media}}
+            {{form}}
+        </div>
+        <div class="d-flex flex-row-reverse bd-highlight">
+            <button type="submit" class="btn btn-primary">Enviar</button>
+        </div>
+    </form>
+    {% else %}
+        <p><em>Para comentar debes <a href="{% url 'login' %}">suscribirte, es gratis!</a></em></p>
+    {% endif %}
+    <hr class="my-4">
+    <div id="comments">
+        {% for comment in comments %}
+            <p><strong>@{{ comment.author }}</strong> - {{ comment.created_at.date }}</p>
+            <div>
+                {{ comment.message|safe }}
+            </div>
+            <hr class="my-4">
+        {% endfor %}
+    </div>
+{% endblock %}

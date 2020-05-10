@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Regístrate en el Newsletter del Blog</h2>
+    <span>Al regístrarte te llegará un mail mensual sobre los nuevos articulos del Blog.</span>
+
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300" />
+    <br><br>
+    <a id="google-signin-button" class="css-1graipa" href="{% url 'social:begin' 'google-oauth2' %}">
+        <span class="css-1vqao0l">
+            <span class="css-t5emrf">
+                <img src="/static/img/google.svg" alt="" style="height: 18px; margin-right: 8px; width: 18px;">
+                <span>Continue with Google</span>
+            </span>
+        </span>
+    </a>
+{% endblock %}

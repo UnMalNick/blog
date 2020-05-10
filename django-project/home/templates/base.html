@@ -1,0 +1,21 @@
+{% load static %}
+<html>
+    <header>
+        <title>Blog</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{% static 'css/depend/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+        <script src="{% static 'js/depend/jquery-3.4.1.slim.min.js' %}"></script>
+        <script src="{% static 'js/depend/popper.min.js' %}"></script>
+        <script src="{% static 'js/depend/bootstrap.min.js' %}"></script>
+    </header>
+    <body>
+        <div class="container">
+            {% include 'nav.html' %}
+            <div class="div-content">
+                {% block content %}
+                {% endblock %}
+            </div>
+        </div>
+    </body>
+</html>
