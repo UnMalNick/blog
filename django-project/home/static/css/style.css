@@ -51,6 +51,7 @@
     background: rgb(255, 255, 255) !important;
     align-items: baseline;
     -webkit-writing-mode: horizontal-tb !important;
+    writing-mode: horizontal-tb !important;
     -webkit-box-align: baseline;
     -webkit-appearance: button;
     margin: auto;
