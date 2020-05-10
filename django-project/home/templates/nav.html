@@ -2,7 +2,6 @@
   <a class="navbar-brand" href="{% url 'home' %}">Juan Rojas</a>
   
   {% if user.is_authenticated %}
-    <div class="collapse navbar-collapse" id="navbarText">
       <ul class="navbar-nav mr-auto">
         
       </ul>
@@ -14,14 +13,11 @@
           <a class="nav-link" href="{% url 'logout' %}">Salir</a>
         </li>
       </ul>
-    </div>
   {% else %}
-    <div class="collapse navbar-collapse" id="navbarText">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
             <a class="nav-link" href="{% url 'login' %}">Suscríbete, es gratis!</a>
         </li>
       </ul>
-    </div>
   {% endif %}
 </nav>
