@@ -1,6 +1,6 @@
 {% load static %}
 <html>
-    <header>
+    <head>
         <title>Blog</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="{% static 'css/depend/bootstrap.min.css' %}">
@@ -8,7 +8,17 @@
         <script src="{% static 'js/depend/jquery-3.4.1.slim.min.js' %}"></script>
         <script src="{% static 'js/depend/popper.min.js' %}"></script>
         <script src="{% static 'js/depend/bootstrap.min.js' %}"></script>
-    </header>
+        <!-- Start Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-DD4WFLB5NW"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', '{{ G_ANALYTICS }}');
+        </script>
+        <!-- End Global site tag (gtag.js) - Google Analytics -->
+    </head>
     <body>
         <div class="container">
             {% include 'nav.html' %}
