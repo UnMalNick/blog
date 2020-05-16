@@ -28,7 +28,7 @@ class LimitLectureMiddleware():
             
             if request.COOKIES.get(self.cookie_date_name):
                 date_str = request.COOKIES.get(self.cookie_date_name)
-                limit_date = datetime.strptime(date_str, "%d/%m/%y") + timedelta(days=7)
+                limit_date = datetime.strptime(date_str, "%d/%m/%y") + timedelta(days=30)
 
                 if datetime.now() > limit_date:
                     self.create_cookie(response)
