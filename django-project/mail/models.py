@@ -16,7 +16,6 @@ class TransactionalEmail(models.Model):
     slug = models.SlugField()
     sender = models.ForeignKey(Sender, on_delete=models.CASCADE)
     subject = models.CharField(max_length=140)
-    template_name = models.CharField(max_length=140)
     
 
 class EmailToUser(models.Model):
