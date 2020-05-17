@@ -33,11 +33,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'froala_editor',
+    'social_django',
     'post',
     'comment',
     'home',
-    'froala_editor',
-    'social_django',
+    'mail',
 ]
 
 MIDDLEWARE = [
@@ -112,13 +113,15 @@ USE_L10N = True
 USE_TZ = True
 
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/3.0/howto/static-files/
-
+## Static Files Config
 STATIC_URL = '/static/'
 
+
+## Media Files Config
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media') 
 MEDIA_URL = '/media/'  
+
+## Froala Editor
 
 FROALA_EDITOR_THEME = 'dark'
 
@@ -126,6 +129,7 @@ FROALA_EDITOR_OPTIONS = {
     'width': '1024'
 }
 
+## Social Auth App 
 
 AUTHENTICATION_BACKENDS = (
     'social_core.backends.google.GoogleOAuth2',
@@ -139,3 +143,4 @@ LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
 
 SOCIAL_AUTH_URL_NAMESPACE = 'social'
+SOCIAL_AUTH_USERNAME_IS_FULL_EMAIL = True

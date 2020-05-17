@@ -1,6 +1,11 @@
 {% extends 'base.html' %}
 
 {% block content %}
+    {% if request.COOKIES.jp4ouzjz == '5' %}
+        <div class="alert alert-warning" role="alert">
+            <span>Tienes 5 lecturas disponibles al mes. Si quieres seguir leyendo totalmente gratis, regístrate al Newsletter.</span>
+        </div>
+    {% endif %}
     <h2>Regístrate en el Newsletter del Blog</h2>
     <span>Al regístrarte te llegará un mail mensual sobre los nuevos articulos del Blog.</span>
 
