@@ -1,4 +1,5 @@
 import mandrill
+import time
 from celery import shared_task
 from django.conf import settings
 from django.template.loader import get_template
@@ -7,6 +8,7 @@ from .models import EmailToUser as eu
 
 @shared_task
 def send_email(id):
+    time.sleep(2)
     EmailToUser = eu.objects.get(id=id)
     template_mail = get_template("mail/{0}.html".format(EmailToUser.email.slug))
     html_email = template_mail.render({
