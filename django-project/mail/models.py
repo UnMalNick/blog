@@ -1,4 +1,6 @@
 from django.db import models
+from froala_editor.fields import FroalaField
+
 from django.contrib.auth.models import User
 # Create your models here.
 
